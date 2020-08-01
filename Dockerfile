@@ -12,4 +12,4 @@ RUN wget -q http://download.documentfoundation.org/libreoffice/stable/${OFFICE_V
 RUN yum remove -y libreoffice-extension-languagetool
 RUN yum -y install libXinerama libGLU dbus-glib cairo cups
 RUN yum clean all
-ENV PATH="/opt/libreoffice6.4/program/:${PATH}"
+ENV PATH="/opt/libreoffice6.3/program/:${PATH}"
