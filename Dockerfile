@@ -14,7 +14,9 @@ RUN set -x \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean;
 
-ENV SAL_USE_VCLPLUGIN="gen libreoffice"
+ENV DEBIAN_FRONTEND noninteractive
+ENV SAL_USE_VCLPLUGIN "gen libreoffice"
+
 VOLUME ["/usr/local/share/fonts/"]
 
 RUN echo "soffice version: $(soffice --version)"
