@@ -1,5 +1,8 @@
 FROM debian:jessie
 
+ENV DEBIAN_FRONTEND noninteractive
+ENV SAL_USE_VCLPLUGIN "gen libreoffice"
+
 RUN set -x \
     && apt-get update \
     && apt-get install -y --no-install-recommends ca-certificates wget \
@@ -13,9 +16,6 @@ RUN set -x \
        openjdk-14-jre-headless libreoffice \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean;
-
-ENV DEBIAN_FRONTEND noninteractive
-ENV SAL_USE_VCLPLUGIN "gen libreoffice"
 
 VOLUME ["/usr/local/share/fonts/"]
 
