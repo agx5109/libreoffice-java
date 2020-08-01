@@ -2,7 +2,7 @@ FROM debian:jessie
 
 RUN set -x \
     && apt-get update 
-    && apt-get install -y --no-install-recommends ca-certificates wget 
+    && apt-get install -y --no-install-recommends ca-certificates wget \
     && rm -rf /var/lib/apt/lists/* \
     && dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"
 
